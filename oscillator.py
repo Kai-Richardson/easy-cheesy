@@ -1,6 +1,5 @@
 from gpiozero import AngularServo
-import time
-from time import sleep
+from time import sleep, time
 
 signal = 12
 servo = AngularServo(signal, min_angle=-90, max_angle=90)
@@ -11,6 +10,7 @@ oscillation_speed = 0.15  # seconds between moves
 run_time = 3.0      # total time to oscillate (seconds)
 
 start = time()
+
 while time() - start < run_time:
     servo.angle = up_angle
     print("Servo is up now: ", servo.angle)
