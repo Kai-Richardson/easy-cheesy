@@ -1,4 +1,5 @@
 from gpiozero import AngularServo
+import time
 from time import sleep
 
 signal = 12
