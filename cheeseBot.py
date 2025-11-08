@@ -1,6 +1,7 @@
 from gpiozero import Button
 # from carousel import rotate_to_next_slice  # TBD
 from oscillator import scrape_cheese
+from stepper import advance_cheese
 import time
 
 # ----------------------------
@@ -30,7 +31,8 @@ def main():
         time.sleep(0.2)  # debounce delay
 
         # Run dispensing sequence
-        # rotate_to_next_slice(slice_count)  # Uncomment when carousel is ready
+        advance_cheese()
+        time.sleep(3)  # wait for cheese to advance
         scrape_cheese()
 
         print(f"Slice #{slice_count} dispensed! Waiting for next button press...\n")

@@ -14,14 +14,16 @@ microMode = 8
 # full rotation multiplied by the microstep divider
 steps = 200 * microMode
 
-while True:
-    # change dir every loop
-    DIR.value = not DIR.value
-    print("Direction:", DIR.value)
+# 8 microMode and 200 steps  @ 0.001 goes 1.5 inches
+speed = 0.001
+
+def advance_cheese():
+    """
+    Advance the cheese by one cheese.
+    """
+    DIR.value = True  # Set direction to forward
     for x in range(steps):
         STEP.value = True
-        time.sleep(0.001)
+        time.sleep(speed)
         STEP.value = False
-        time.sleep(0.001)
-    print("Full rotation complete")
-    time.sleep(1)
+        time.sleep(speed)
