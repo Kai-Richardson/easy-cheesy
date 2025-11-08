@@ -8,12 +8,12 @@ print("This is the motor: ", motor)
 # Move forward slowly
 print("Moving forward slowly")
 
-motor.forward(0.1)
+motor.forward(0.6)
 sleep(2)
 
 print("Moving backward slowly")
-motor.backward(0.1)
-sleep(2)
+# motor.backward(0.1)
+# sleep(2)
 
 print("Stopping motor")
 motor.stop()
