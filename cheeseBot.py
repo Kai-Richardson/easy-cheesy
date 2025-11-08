@@ -36,7 +36,7 @@ def main():
         try:
             user_input = input("Enter number of cheese slices to dispense (or 'q' to quit): ").strip()
             if user_input.lower() in ["q", "quit", "exit"]:
-                print("👋 Shutting down CheeseBot.")
+                print("Shutting down CheeseBot.")
                 break
 
             if not user_input.isdigit():
@@ -46,10 +46,10 @@ def main():
             slices = int(user_input)
             dispense_cheese(slices)
 
-            print("✅ Dispensing complete. Waiting for next button press...\n")
+            print("Dispensing complete. Waiting for next button press...\n")
 
         except KeyboardInterrupt:
-            print("\n🛑 Interrupted manually. Shutting down CheeseBot safely.")
+            print("\n Interrupted manually. Shutting down CheeseBot safely.")
             break
 
 if __name__ == "__main__":

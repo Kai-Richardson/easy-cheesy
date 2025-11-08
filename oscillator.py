@@ -1,27 +1,29 @@
 from gpiozero import AngularServo
-from time import sleep
+from time import sleep, time
 
 def scrape_cheese():
+    """
+    Activate the cheese scraper oscillator servo.
+
+    Moves servo between up_angle and down_angle repeatedly for a fixed run_time,
+    then returns servo to neutral position.
+    """
     signal = 12
     servo = AngularServo(signal, min_angle=-90, max_angle=90)
-    print("This is servo: ", servo)
 
-    # Move from -90° → +90° and back once
-    for angle in range(-90, 91, 30):
-        print("This is the for loop in the first rotation")
-        servo.angle = angle
-        print("Servo angle is at: ", servo.angle)
-        sleep(0.5)
+    up_angle = 30       # degrees upward
+    down_angle = -30    # degrees downward
+    oscillation_speed = 0.15  # seconds between moves
+    run_time = 3.0      # total time to oscillate (seconds)
 
-    print("Completed first rotation.")
+    start = time()
 
-    for angle in range(90, -91, -30):
-        print("This is the second for loop for second rotation")
-        servo.angle = angle
-        print("Servo angle is at: ", servo.angle)
-        sleep(0.5)
+    while time() - start < run_time:
+        servo.angle = up_angle
+        print("Servo is up now: ", servo.angle)
+        sleep(oscillation_speed)
+        servo.angle = down_angle
+        print("Servo is down now: ", servo.angle)
+        sleep(oscillation_speed)
 
-    print("Completed second rotation.")
-
-    servo.angle = 0  # center
-    sleep(1)
+    servo.ang
