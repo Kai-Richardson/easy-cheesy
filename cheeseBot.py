@@ -1,5 +1,5 @@
 from gpiozero import Button
-#from carousel import rotate_to_next_slice #TBD
+# from carousel import rotate_to_next_slice  # TBD
 from oscillator import scrape_cheese
 import time
 
@@ -9,48 +9,28 @@ import time
 BUTTON_PIN = 17  # GPIO pin connected to start button
 
 # ----------------------------
-# Cheese dispensing logic
-# ----------------------------
-def dispense_cheese(slices: int):
-    print(f"\n🤖 Dispensing {slices} cheese slice{'s' if slices != 1 else ''}...")
-    for i in range(1, slices + 1):
-        print(f"🧩 Starting sequence for slice {i}...")
-        #rotate_to_next_slice(i)
-        scrape_cheese()
-        print(f"--- Slice {i} complete ---\n")
-        time.sleep(0.5)
-    print("🍔 All slices successfully dispensed!\n")
-
-# ----------------------------
 # Main control flow
 # ----------------------------
 def main():
     button = Button(BUTTON_PIN)
-    print("🧀 CheeseBot 3000 is online. Waiting for button press to start...")
+    slice_count = 1  # start counting slices
+    print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 
-    while True:
-        button.wait_for_press()
-        print("\n📶 Button pressed — CheeseBot activated!\n")
-        time.sleep(0.5)  # debounce delay
+    try:
+        while True:
+            button.wait_for_press()  # wait for button press
+            print(f"\nButton pressed — dispensing slice #{slice_count}...\n")
+            time.sleep(0.2)  # debounce delay
 
-        try:
-            user_input = input("Enter number of cheese slices to dispense (or 'q' to quit): ").strip()
-            if user_input.lower() in ["q", "quit", "exit"]:
-                print("Shutting down CheeseBot.")
-                break
+            # Run dispensing sequence
+            # rotate_to_next_slice(slice_count)  # Uncomment when carousel is ready
+            scrape_cheese()
 
-            if not user_input.isdigit():
-                print("⚠️  Invalid input. Please enter a number.\n")
-                continue
+            print(f"Slice #{slice_count} dispensed! Waiting for next button press...\n")
+            slice_count += 1  # increment slice counter
 
-            slices = int(user_input)
-            dispense_cheese(slices)
-
-            print("Dispensing complete. Waiting for next button press...\n")
-
-        except KeyboardInterrupt:
-            print("\n Interrupted manually. Shutting down CheeseBot safely.")
-            break
+    except KeyboardInterrupt:
+        print("\nInterrupted. Shutting down CheeseBot safely.")
 
 if __name__ == "__main__":
     main()
