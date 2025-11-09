@@ -1,3 +1,5 @@
 gpiozero
 sparkfun-qwiic-buzzer
 smbus2
+board
+digitalio
