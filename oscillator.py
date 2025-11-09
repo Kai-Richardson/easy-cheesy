@@ -20,7 +20,7 @@ def scrape_cheese():
     # up_angle = 60    # degrees upward
     # down_angle = 85    # degrees downward
     # oscillation_speed = 0.5  # seconds between moves
-    run_time = 6.0      # total time to oscillate (seconds)
+    run_time = 4.0      # total time to oscillate (seconds)
 
     dip_angle = -27
     end_angle = -90
