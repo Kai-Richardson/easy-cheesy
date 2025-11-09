@@ -48,12 +48,10 @@ def sound_effect_cheesed(volume=buzzer.VOLUME_MAX):
     buzzer.off()
 
 
-def advance_cheese_sound():
+def advance_cheese_sound(volume=buzzer.VOLUME_MAX):
     if not buzzer.begin():
         print("Buzzer not connected.")
         return
-
-    volume = 8
 
     # Step-up tones — cheerful upward motion
     notes = [600, 800, 950, 1100, 1300]
