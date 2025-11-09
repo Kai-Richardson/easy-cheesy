@@ -23,7 +23,7 @@ def play_async(func):
 # Main control flow
 # ----------------------------
 def main():
-    button = Button(BUTTON_PIN,pull_up=False)  # Set to pull_up false due to 3.3volt configuration
+    button = Button(BUTTON_PIN,pull_up=True)  # Set to pull_up false due to 3.3volt configuration
     buzzer = buzzer_module.BuzzerController(qwiicBuzzer)
 
     slice_count = 1  # start counting slices
