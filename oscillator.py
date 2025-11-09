@@ -26,3 +26,5 @@ def scrape_cheese():
         print("Servo angle: ", servo.angle)
         sleep(oscillation_speed)
 
+    servo.angle = 0
+
