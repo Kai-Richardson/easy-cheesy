@@ -36,7 +36,7 @@ def scrape_cheese():
             servo.angle = angle
             print(f"Scraping... angle: {angle}")
             sleep(speed)
-            end_angle += 7
+            servo.angle += 5
         # sleep(oscillation_speed)
         # servo.angle = down_angle
         # sleep(oscillation_speed)
