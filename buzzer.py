@@ -46,3 +46,26 @@ def sound_effect_cheesed(volume=buzzer.VOLUME_MAX):
     buzzer.on()
     time.sleep(0.2)
     buzzer.off()
+
+
+def advance_cheese_sound():
+    if not buzzer.begin():
+        print("Buzzer not connected.")
+        return
+
+    volume = 8
+
+    # Step-up tones — cheerful upward motion
+    notes = [600, 800, 950, 1100, 1300]
+    for freq in notes:
+        buzzer.configure(freq, 0, volume)
+        buzzer.on()
+        time.sleep(0.12)
+        buzzer.off()
+        time.sleep(0.05)
+
+    # Little “hop” at the end
+    buzzer.configure(1500, 0, volume)
+    buzzer.on()
+    time.sleep(0.15)
+    buzzer.off()

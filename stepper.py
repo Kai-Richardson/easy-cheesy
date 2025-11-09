@@ -15,7 +15,7 @@ microMode = 8
 steps = 200 * microMode
 
 # 8 microMode and 200 steps  @ 0.001 goes 1.5 inches
-speed = 0.003
+speed = 0.001
 
 def advance_cheese():
     """

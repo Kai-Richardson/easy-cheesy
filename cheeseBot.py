@@ -36,6 +36,7 @@ def main():
         time.sleep(0.2)  # debounce delay
 
         # Run dispensing sequence
+        buzzer.advance_cheese_sound()
         advance_cheese()
         time.sleep(3)  # wait for cheese to advance
 
