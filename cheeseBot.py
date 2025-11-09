@@ -44,11 +44,11 @@ def main():
         time.sleep(0.2)  # debounce delay
 
         # Run dispensing sequence
-        buzzer.advance_cheese_sound()
+        buzzer.start_advance_cheese()
         advance_cheese()
         # time.sleep(3)  # wait for cheese to advance
 
-        buzzer.sound_effect_cheesed()
+        buzzer.start_cheesed()
         scrape_cheese()
 
         print(f"Slice #{slice_count} dispensed! Waiting for next button press...\n")
