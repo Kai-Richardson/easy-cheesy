@@ -13,7 +13,7 @@ def scrape_cheese():
 
     up_angle = 90      # degrees upward
     down_angle = -90    # degrees downward
-    oscillation_speed = 0.15  # seconds between moves
+    oscillation_speed = 0.99  # seconds between moves
     run_time = 3.0      # total time to oscillate (seconds)
 
     start = time()
