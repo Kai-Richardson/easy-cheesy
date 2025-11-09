@@ -14,6 +14,9 @@ microMode = 8
 # full rotation multiplied by the microstep divider
 steps = 200 * microMode
 
+LIMIT = 7
+steps_taken = 0
+
 # 8 microMode and 200 steps  @ 0.001 goes 1.5 inches
 speed = 0.001
 
@@ -23,7 +26,9 @@ def advance_cheese():
     """
     DIR.value = False  # Set direction to forward
     for x in range(steps):
-        STEP.value = True
-        time.sleep(speed)
-        STEP.value = False
-        time.sleep(speed)
+        if steps_taken != LIMIT:
+            STEP.value = True
+            time.sleep(speed)
+            STEP.value = False
+            time.sleep(speed)
+            steps_taken += 1
