@@ -1,5 +1,5 @@
 from gpiozero import Button
-# from carousel import rotate_to_next_slice  # TBD
+from stepper import advance_cheese
 from oscillator import scrape_cheese
 from stepper import advance_cheese
 import time
