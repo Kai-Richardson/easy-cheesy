@@ -36,7 +36,7 @@ def scrape_cheese():
         # sleep(oscillation_speed)
 
     sleep(2)
-    servo.value = 0
+    servo.value = 45
     sleep(3)
     
 
