@@ -16,11 +16,11 @@ def scrape_cheese():
     # oscillation_speed = 0.5  # seconds between moves
     run_time = 10.0      # total time to oscillate (seconds)
 
-    dip_angle = 20
+    dip_angle = 35
     end_angle = 90
-    step = 5           # degrees per incremental move
+    step = 1           # degrees per incremental move
     step_delay = 0.15  # seconds between moves (controls scraping speed)
-    speed = 0.5
+    speed = 0.15
 
     start = time()
 
