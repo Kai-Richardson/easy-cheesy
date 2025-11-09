@@ -97,7 +97,7 @@ class BuzzerController:
         self._stop_event.clear()
         self._thread = threading.Thread(
             target=self._advance_cheese_thread,
-            args=(volume or self.buzzer.VOLUME_MAX)
+            args=(volume or self.buzzer.VOLUME_MAX,)
         )
         self._thread.start()
 
@@ -106,7 +106,7 @@ class BuzzerController:
         self._stop_event.clear()
         self._thread = threading.Thread(
             target=self._cheesed_thread,
-            args=(volume or self.buzzer.VOLUME_MAX)
+            args=(volume or self.buzzer.VOLUME_MAX,)
         )
         self._thread.start()
 
