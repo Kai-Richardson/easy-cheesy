@@ -18,7 +18,6 @@ def scrape_cheese():
 
     start = time()
 
-    # 0: not moving, 1: going up, 2: going down
     direction = 0
     while time() - start < run_time:
         servo.angle = up_angle
