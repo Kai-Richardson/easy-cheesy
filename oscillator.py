@@ -14,8 +14,8 @@ def scrape_cheese():
     servo.angle = 0
     sleep(0.5) 
 
-    up_angle = 30       # degrees upward
-    down_angle = -30    # degrees downward
+    up_angle = 90       # degrees upward
+    down_angle = 40    # degrees downward
     oscillation_speed = 0.15  # seconds between moves
     run_time = 3.0      # total time to oscillate (seconds)
 
