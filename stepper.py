@@ -13,9 +13,9 @@ STEP.direction = Direction.OUTPUT
 microMode = 5
 # full rotation multiplied by the microstep divider
 
-steps = 200 * microMode
+steps = 200 * microMode * 2 # 2 inches
 
-initial_steps = 500
+initial_steps = 500 # 0.5 inches
 
 LIMIT = 7
 steps_taken = 0
