@@ -5,11 +5,13 @@ from stepper import advance_cheese
 import time
 import buzzer as buzzer_module
 import threading
+import qwiic_buzzer
 
 # ----------------------------
 # Configuration
 # ----------------------------
 BUTTON_PIN = 16  # GPIO pin connected to start button
+qwiicBuzzer = qwiic_buzzer.QwiicBuzzer()
 
 def play_async(func):
     """Run a sound effect function in a background thread."""
@@ -22,7 +24,7 @@ def play_async(func):
 # ----------------------------
 def main():
     button = Button(BUTTON_PIN,pull_up=False)  # Set to pull_up false due to 3.3volt configuration
-    buzzer = buzzer_module.BuzzerController(buzzer_module)
+    buzzer = buzzer_module.BuzzerController(qwiicBuzzer)
 
     slice_count = 1  # start counting slices
     busy = False     # flag to indicate if a slice is being dispensed
