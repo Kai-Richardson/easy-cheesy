@@ -25,7 +25,3 @@ def scrape_cheese():
         servo.angle = down_angle
         print("Servo is down now: ", servo.angle)
         sleep(oscillation_speed)
-
-    # servo.ang
-
-scrape_cheese()
