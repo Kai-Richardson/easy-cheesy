@@ -7,7 +7,7 @@ import time
 # ----------------------------
 # Configuration
 # ----------------------------
-BUTTON_PIN = 17  # GPIO pin connected to start button
+BUTTON_PIN = 7  # GPIO pin connected to start button
 
 # ----------------------------
 # Main control flow
