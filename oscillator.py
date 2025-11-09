@@ -13,7 +13,7 @@ def scrape_cheese():
 
     up_angle = 10     # degrees upward
     down_angle = -10    # degrees downward
-    oscillation_speed = 0.99  # seconds between moves
+    oscillation_speed = 0.15  # seconds between moves
     run_time = 3.0      # total time to oscillate (seconds)
 
     start = time()
@@ -24,10 +24,12 @@ def scrape_cheese():
         if direction == 0:
             direction = 1
             servo.angle = up_angle
+            sleep(oscillation_speed)
             print("going up")
         elif servo.angle == up_angle:
             direction = 2
             servo.angle = down_angle
+            sleep(oscillation_speed)
             print("going down")
         elif servo.angle == down_angle:
             direction = 0
