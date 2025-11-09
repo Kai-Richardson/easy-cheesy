@@ -7,7 +7,7 @@ import time
 # ----------------------------
 # Configuration
 # ----------------------------
-BUTTON_PIN = 5  # GPIO pin connected to start button
+BUTTON_PIN = 16  # GPIO pin connected to start button
 
 # ----------------------------
 # Main control flow
@@ -18,6 +18,7 @@ def main():
     busy = False     # flag to indicate if a slice is being dispensed
 
     print("This is the button: ", button)
+
 
     print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 
