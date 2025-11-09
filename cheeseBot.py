@@ -25,7 +25,6 @@ def main():
     print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 
     def handle_press():
-        buzzer.sound_effect_cheesed()
         nonlocal slice_count, busy
 
         if busy:
@@ -35,6 +34,7 @@ def main():
         busy = True
         print(f"\nButton pressed — dispensing slice #{slice_count}...\n")
         time.sleep(0.2)  # debounce delay
+        buzzer.sound_effect_cheesed()
 
         # Run dispensing sequence
         advance_cheese()
