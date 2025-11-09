@@ -5,7 +5,7 @@ buzzer = qwiic_buzzer.QwiicBuzzer()
 
 # buzzer.sound_effect_1(volume=buzzer.VOLUME_MAX)
 
-def sound_effect_cheesed(self, volume=buzzer.VOLUME_MAX):
+def sound_effect_cheesed(volume=buzzer.VOLUME_MAX):
     """
     Plays a short melody followed by a "you've been cheesed" tone pattern.
     """
