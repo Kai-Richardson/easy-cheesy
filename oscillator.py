@@ -26,6 +26,6 @@ def scrape_cheese():
 
     sleep(2)
     servo.value = 0
-    sleep(2)
+    sleep(3)
     
 
