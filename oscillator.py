@@ -12,8 +12,8 @@ def scrape_cheese():
     servo = AngularServo(signal, min_angle=-90, max_angle=90, min_pulse_width=0.0005,  # 0.5ms
         max_pulse_width=0.0025) 
 
-    up_angle = -90       # degrees upward
-    down_angle = -40    # degrees downward
+    up_angle = -120       # degrees upward
+    down_angle = -100    # degrees downward
     oscillation_speed = 0.15  # seconds between moves
     run_time = 3.0      # total time to oscillate (seconds)
 
