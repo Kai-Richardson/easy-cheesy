@@ -3,7 +3,6 @@ from stepper import advance_cheese
 from oscillator import scrape_cheese
 from stepper import advance_cheese
 import time
-import buzzer
 
 # ----------------------------
 # Configuration
@@ -34,7 +33,6 @@ def main():
         busy = True
         print(f"\nButton pressed — dispensing slice #{slice_count}...\n")
         time.sleep(0.2)  # debounce delay
-        buzzer.sound_effect_cheesed()
 
         # Run dispensing sequence
         advance_cheese()

@@ -1,5 +1,6 @@
 from gpiozero import AngularServo
 from time import sleep, time
+import buzzer
 
 def scrape_cheese():
     """
@@ -17,6 +18,7 @@ def scrape_cheese():
     run_time = 3.0      # total time to oscillate (seconds)
 
     start = time()
+    buzzer.sound_effect_cheesed()
 
     while time() - start < run_time:
         servo.angle = up_angle
