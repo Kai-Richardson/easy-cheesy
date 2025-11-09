@@ -13,6 +13,7 @@ STEP.direction = Direction.OUTPUT
 microMode = 10
 # full rotation multiplied by the microstep divider
 steps = 200 * microMode
+initial_steps = 450
 
 LIMIT = 7
 steps_taken = 0
@@ -27,6 +28,9 @@ def advance_cheese():
     Advance the cheese by one cheese.
     """
     DIR.value = False  # Set direction to forward
+    if steps_taken == 0:
+        for x in range(initial_steps):
+            STEP.value = True
     if steps_taken != LIMIT:
         for x in range(steps):
             print("Steps taken haven't reached the limit of 7. Steps taken: ", steps_taken, " and limit is ", LIMIT)
