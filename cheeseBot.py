@@ -17,6 +17,8 @@ def main():
     slice_count = 1  # start counting slices
     busy = False     # flag to indicate if a slice is being dispensed
 
+    print("This is the button: ", button)
+
     print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 
     def handle_press():
