@@ -14,7 +14,7 @@ BUTTON_PIN = 16  # GPIO pin connected to start button
 # Main control flow
 # ----------------------------
 def main():
-    button = Button(BUTTON_PIN,pull_up=False)
+    button = Button(BUTTON_PIN,pull_up=False)  # Set to pull_up false due to 3.3volt configuration
 
     slice_count = 1  # start counting slices
     busy = False     # flag to indicate if a slice is being dispensed
