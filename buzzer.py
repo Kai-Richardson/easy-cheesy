@@ -1,5 +1,6 @@
 import qwiic_buzzer
 import time
+import random
 
 buzzer = qwiic_buzzer.QwiicBuzzer()
 
