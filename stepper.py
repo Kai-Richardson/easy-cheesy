@@ -15,12 +15,13 @@ microMode = 8
 steps = 200 * microMode
 
 LIMIT = 7
+steps_taken = 0
 
 # 8 microMode and 200 steps  @ 0.001 goes 1.5 inches
 speed = 0.001
 
 def advance_cheese():
-    steps_taken = 0
+    global steps_taken
     print("Current steps taken: ", steps_taken)
     """
     Advance the cheese by one cheese.
