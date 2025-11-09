@@ -4,11 +4,18 @@ from oscillator import scrape_cheese
 from stepper import advance_cheese
 import time
 import buzzer
+import threading
 
 # ----------------------------
 # Configuration
 # ----------------------------
 BUTTON_PIN = 16  # GPIO pin connected to start button
+
+def play_async(func):
+    """Run a sound effect function in a background thread."""
+    thread = threading.Thread(target=func)
+    thread.daemon = True
+    thread.start()
 
 # ----------------------------
 # Main control flow
@@ -36,11 +43,11 @@ def main():
         time.sleep(0.2)  # debounce delay
 
         # Run dispensing sequence
-        buzzer.advance_cheese_sound()
+        play_async(buzzer.advance_cheese_sound())
         advance_cheese()
         time.sleep(3)  # wait for cheese to advance
 
-        buzzer.sound_effect_cheesed()
+        play_async(buzzer.sound_effect_cheesed())
         scrape_cheese()
 
         print(f"Slice #{slice_count} dispensed! Waiting for next button press...\n")
