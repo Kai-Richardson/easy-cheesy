@@ -21,25 +21,13 @@ def scrape_cheese():
     # 0: not moving, 1: going up, 2: going down
     direction = 0
     while time() - start < run_time:
-        if direction == 0:
-            direction = 1
-            servo.angle = up_angle
-            sleep(oscillation_speed)
-            print("going up")
-        elif servo.angle == up_angle:
-            direction = 2
-            servo.angle = down_angle
-            sleep(oscillation_speed)
-            print("going down")
-        elif servo.angle == down_angle:
-            direction = 0
-            print("finished a cycle")
-        
-    print("Loop done, proceeding with resetting value, here is angle: ", servo.angle)
+        servo.angle = up_angle
+        sleep(oscillation_speed)
+        servo.angle = down_angle
+        sleep(oscillation_speed)
+
     sleep(2)
-    print("Sleep complete, here is angle: ", servo.angle)
     servo.value = 0
     sleep(2)
-    print("This is the final angle:", servo.angle)
     
 
