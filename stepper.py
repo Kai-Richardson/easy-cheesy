@@ -12,7 +12,9 @@ STEP.direction = Direction.OUTPUT
 # another ex: 1/16 microstep would be 16
 microMode = 5
 # full rotation multiplied by the microstep divider
-steps = 200 * microMode
+
+# steps = 200 * microMode
+steps = 6000
 initial_steps = 500
 
 LIMIT = 7
