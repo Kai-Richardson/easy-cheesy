@@ -46,6 +46,3 @@ def sound_effect_cheesed(volume=buzzer.VOLUME_MAX):
     buzzer.on()
     time.sleep(0.2)
     buzzer.off()
-
-
-sound_effect_cheesed()

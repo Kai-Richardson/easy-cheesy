@@ -3,6 +3,7 @@ from stepper import advance_cheese
 from oscillator import scrape_cheese
 from stepper import advance_cheese
 import time
+import buzzer
 
 # ----------------------------
 # Configuration
@@ -22,6 +23,7 @@ def main():
     print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 
     def handle_press():
+        buzzer.sound_effect_cheesed()
         nonlocal slice_count, busy
 
         if busy:
