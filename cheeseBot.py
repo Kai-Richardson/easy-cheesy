@@ -45,7 +45,7 @@ def main():
         # Run dispensing sequence
         play_async(buzzer.advance_cheese_sound())
         advance_cheese()
-        time.sleep(3)  # wait for cheese to advance
+        # time.sleep(3)  # wait for cheese to advance
 
         play_async(buzzer.sound_effect_cheesed())
         scrape_cheese()
