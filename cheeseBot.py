@@ -23,14 +23,11 @@ def play_async(func):
 # Main control flow
 # ----------------------------
 def main():
-    button = Button(BUTTON_PIN,pull_up=True)  # Set to pull_up false due to 3.3volt configuration
+    button = Button(BUTTON_PIN,pull_up=True) 
     buzzer = buzzer_module.BuzzerController(qwiicBuzzer)
 
     slice_count = 1  # start counting slices
     busy = False     # flag to indicate if a slice is being dispensed
-
-    print("This is the button: ", button)
-
 
     print("🧀 CheeseBot 3000 is online. Press the button to dispense a slice of cheese.")
 

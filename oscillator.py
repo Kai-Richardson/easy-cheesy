@@ -22,7 +22,6 @@ def scrape_cheese():
     dip_angle = -30
     end_angle = -70
     step = -5           # degrees per incremental move
-    step_delay = 0.15  # seconds between moves (controls scraping speed)
     speed = 0.5
 
     start = time()
@@ -34,7 +33,7 @@ def scrape_cheese():
             print(f"Scraping... angle: {angle}")
             sleep(speed)
 
-    sleep(2)
+    # sleep(2)
     servo.value = 0.75
     sleep(3)
     
