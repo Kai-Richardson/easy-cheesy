@@ -4,3 +4,4 @@ smbus2
 board
 Adafruit-Blinka
 Adafruit-circuitpython-neopixel
+rpi_ws281x
