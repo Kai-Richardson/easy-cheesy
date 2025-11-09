@@ -8,8 +8,13 @@ def scrape_cheese():
     Moves servo between up_angle and down_angle repeatedly for a fixed run_time,
     then returns servo to neutral position.
     """
+
     signal = 12
     servo = AngularServo(signal, min_pulse_width=0.0005, max_pulse_width=0.0025) 
+
+    # Set at top position
+    servo.value = 0.75
+    sleep(2)
 
     # up_angle = 60    # degrees upward
     # down_angle = 85    # degrees downward
@@ -36,7 +41,7 @@ def scrape_cheese():
         # sleep(oscillation_speed)
 
     sleep(2)
-    servo.value = 0.9
+    servo.value = 0.75
     sleep(3)
     
 
