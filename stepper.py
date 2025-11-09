@@ -21,7 +21,7 @@ def advance_cheese():
     """
     Advance the cheese by one cheese.
     """
-    DIR.value = True  # Set direction to forward
+    DIR.value = False  # Set direction to forward
     for x in range(steps):
         STEP.value = True
         time.sleep(speed)
