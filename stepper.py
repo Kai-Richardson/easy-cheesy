@@ -36,6 +36,7 @@ def advance_cheese():
             time.sleep(speed)
             STEP.value = False
             time.sleep(speed)
+            steps_taken += 1
     elif steps_taken != LIMIT and steps_taken > 0:
         for x in range(steps):
             print("Steps taken haven't reached the limit of 7. Steps taken: ", steps_taken, " and limit is ", LIMIT)
