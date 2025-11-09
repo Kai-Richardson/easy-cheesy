@@ -27,3 +27,5 @@ def scrape_cheese():
         sleep(oscillation_speed)
 
     servo.ang
+
+scrape_cheese()
