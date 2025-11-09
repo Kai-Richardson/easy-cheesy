@@ -1,7 +1,7 @@
 from gpiozero import Button
 from stepper import advance_cheese
 from oscillator import scrape_cheese
-from stepper import advance_cheese
+from stepper2 import advance_cheese
 import time
 import buzzer
 
@@ -38,8 +38,8 @@ def main():
         # Run dispensing sequence
         advance_cheese()
         time.sleep(3)  # wait for cheese to advance
-        
-        buzzer.sound_effect_cheesed
+
+        buzzer.sound_effect_cheesed()
         scrape_cheese()
 
         print(f"Slice #{slice_count} dispensed! Waiting for next button press...\n")
