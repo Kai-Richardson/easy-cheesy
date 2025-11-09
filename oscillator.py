@@ -20,12 +20,8 @@ def scrape_cheese():
 
     while time() - start < run_time:
         servo.angle = up_angle
-        print("Servo is up now: ", servo.angle)
         sleep(oscillation_speed)
         servo.angle = down_angle
-        print("Servo is down now: ", servo.angle)
         sleep(oscillation_speed)
-
-
-def neutral_scraper():
-    pass
+    
+    servo.angle = 90
