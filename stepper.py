@@ -21,14 +21,17 @@ speed = 0.001
 
 def advance_cheese():
     steps_taken = 0
+    print("Current steps taken: ", steps_taken)
     """
     Advance the cheese by one cheese.
     """
     DIR.value = False  # Set direction to forward
     for x in range(steps):
         if steps_taken != LIMIT:
+            print("Steps taken haven't reached the limit of 7. Steps taken: ", steps_taken, " and limit is ", LIMIT)
             STEP.value = True
             time.sleep(speed)
             STEP.value = False
             time.sleep(speed)
             steps_taken += 1
+            print("Steps taken after this round is now: ", steps_taken)

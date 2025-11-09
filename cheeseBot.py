@@ -1,7 +1,6 @@
 from gpiozero import Button
 from stepper import advance_cheese
 from oscillator import scrape_cheese
-from stepper import advance_cheese
 import time
 import buzzer as buzzer_module
 import threading
