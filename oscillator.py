@@ -18,7 +18,6 @@ def scrape_cheese():
 
     start = time()
 
-    direction = 0
     while time() - start < run_time:
         servo.angle = up_angle
         sleep(oscillation_speed)
