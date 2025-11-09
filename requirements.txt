@@ -3,4 +3,4 @@ sparkfun-qwiic-buzzer
 smbus2
 board
 Adafruit-Blinka
-neopixel
+Adafruit-circuitpython-neopixel
