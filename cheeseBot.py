@@ -3,7 +3,7 @@ from stepper import advance_cheese
 from oscillator import scrape_cheese
 from stepper import advance_cheese
 import time
-import buzzer
+from buzzer import BuzzerController
 import threading
 
 # ----------------------------
@@ -22,6 +22,7 @@ def play_async(func):
 # ----------------------------
 def main():
     button = Button(BUTTON_PIN,pull_up=False)  # Set to pull_up false due to 3.3volt configuration
+    buzzer = BuzzerController()
 
     slice_count = 1  # start counting slices
     busy = False     # flag to indicate if a slice is being dispensed

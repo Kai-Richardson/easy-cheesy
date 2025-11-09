@@ -53,17 +53,23 @@ def advance_cheese_sound(volume=buzzer.VOLUME_MAX):
         print("Buzzer not connected.")
         return
 
-    # Step-up tones — cheerful upward motion
-    notes = [600, 800, 950, 1100, 1300]
+    notes = [600, 750, 900, 1050, 1250, 1400]
     for freq in notes:
         buzzer.configure(freq, 0, volume)
         buzzer.on()
-        time.sleep(0.12)
+        time.sleep(0.1)
         buzzer.off()
         time.sleep(0.05)
 
-    # Little “hop” at the end
-    buzzer.configure(1500, 0, volume)
+    flourish = [1600, 1800, 2000]
+    for freq in flourish:
+        buzzer.configure(freq, 0, volume)
+        buzzer.on()
+        time.sleep(0.07)
+        buzzer.off()
+        time.sleep(0.03)
+
+    buzzer.configure(2200, 0, volume)
     buzzer.on()
-    time.sleep(0.15)
+    time.sleep(0.12)
     buzzer.off()
