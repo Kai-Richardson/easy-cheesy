@@ -39,19 +39,24 @@ class BuzzerController:
             time.sleep(0.12)
             self.buzzer.off()
 
+
     def _cheesed_thread(self, volume):
         if not self.buzzer.begin():
             print("Buzzer not connected.")
             return
 
+        # Extended melody (~6 sec)
         melody = [
-            (self.buzzer.NOTE_C4, 0.2),
-            (self.buzzer.NOTE_D4, 0.2),
-            (self.buzzer.NOTE_E4, 0.2),
-            (self.buzzer.NOTE_C4, 0.2),
-            (self.buzzer.NOTE_E4, 0.2),
-            (self.buzzer.NOTE_G4, 0.2),
-            (self.buzzer.NOTE_C5, 0.3),
+            (self.buzzer.NOTE_C4, 0.3),
+            (self.buzzer.NOTE_D4, 0.3),
+            (self.buzzer.NOTE_E4, 0.3),
+            (self.buzzer.NOTE_C4, 0.3),
+            (self.buzzer.NOTE_E4, 0.3),
+            (self.buzzer.NOTE_G4, 0.3),
+            (self.buzzer.NOTE_C5, 0.4),
+            (self.buzzer.NOTE_E4, 0.3),
+            (self.buzzer.NOTE_G4, 0.3),
+            (self.buzzer.NOTE_C5, 0.4),
         ]
 
         for freq, dur in melody:
@@ -66,16 +71,10 @@ class BuzzerController:
         if self._stop_event.is_set():
             return
 
-        time.sleep(0.5)  # dramatic pause
+        time.sleep(0.3)  # short pause
 
-        # playful up-down siren
-        for note in range(400, 1800, 100):
-            if self._stop_event.is_set():
-                break
-            self.buzzer.configure(note, 0, volume)
-            self.buzzer.on()
-            time.sleep(0.03)
-        for note in range(1800, 400, -120):
+        # Longer playful up-down siren (~3 sec)
+        for note in list(range(400, 2000, 120)) + list(range(2000, 400, -120)):
             if self._stop_event.is_set():
                 break
             self.buzzer.configure(note, 0, volume)
@@ -86,11 +85,66 @@ class BuzzerController:
         if self._stop_event.is_set():
             return
 
-        # final short buzz
-        self.buzzer.configure(self.buzzer.NOTE_C5, 200, volume)
+        # Cute final tone (~0.5 sec)
+        self.buzzer.configure(self.buzzer.NOTE_C5, 400, volume)
         self.buzzer.on()
-        time.sleep(0.2)
+        time.sleep(0.4)
         self.buzzer.off()
+
+
+    # def _cheesed_thread(self, volume):
+    #     if not self.buzzer.begin():
+    #         print("Buzzer not connected.")
+    #         return
+
+    #     melody = [
+    #         (self.buzzer.NOTE_C4, 0.2),
+    #         (self.buzzer.NOTE_D4, 0.2),
+    #         (self.buzzer.NOTE_E4, 0.2),
+    #         (self.buzzer.NOTE_C4, 0.2),
+    #         (self.buzzer.NOTE_E4, 0.2),
+    #         (self.buzzer.NOTE_G4, 0.2),
+    #         (self.buzzer.NOTE_C5, 0.3),
+    #     ]
+
+    #     for freq, dur in melody:
+    #         if self._stop_event.is_set():
+    #             break
+    #         self.buzzer.configure(freq, 0, volume)
+    #         self.buzzer.on()
+    #         time.sleep(dur)
+    #         self.buzzer.off()
+    #         time.sleep(0.05)
+
+    #     if self._stop_event.is_set():
+    #         return
+
+    #     time.sleep(0.5)  # dramatic pause
+
+    #     # playful up-down siren
+    #     for note in range(400, 1800, 100):
+    #         if self._stop_event.is_set():
+    #             break
+    #         self.buzzer.configure(note, 0, volume)
+    #         self.buzzer.on()
+    #         time.sleep(0.03)
+    #     for note in range(1800, 400, -120):
+    #         if self._stop_event.is_set():
+    #             break
+    #         self.buzzer.configure(note, 0, volume)
+    #         self.buzzer.on()
+    #         time.sleep(0.03)
+    #     self.buzzer.off()
+
+    #     if self._stop_event.is_set():
+    #         return
+
+    #     # final short buzz
+    #     self.buzzer.configure(self.buzzer.NOTE_C5, 200, volume)
+    #     self.buzzer.on()
+    #     time.sleep(0.2)
+    #     self.buzzer.off()
+
 
     def start_advance_cheese(self, volume=None):
         self.stop()
